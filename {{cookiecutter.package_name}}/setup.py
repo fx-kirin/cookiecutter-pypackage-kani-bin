@@ -20,12 +20,6 @@ def get_requires():
     else:
         required = []
 
-    r_path = Path(__file__).parent / "manual_requirements.txt"
-    if r_path.exists():
-        with open(r_path) as f:
-            for req in f.read().splitlines():
-                required.append(req)
-
     return required
 
 
@@ -52,5 +46,5 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
     ],
-    data_files=[("", ["requirements.txt", "manual_requirements.txt"])],
+    data_files=[("", ["requirements.txt"])],
 )
